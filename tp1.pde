@@ -79,3 +79,5 @@ line (0,height/2,600,height/2);
 void mousePressed() {
   println( mouseX + "," + mouseY);
 }
+
+//Alumno: Contreras Franco, TecnoMultimedial 1
