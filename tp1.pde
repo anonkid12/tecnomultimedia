@@ -1,6 +1,5 @@
 void setup() {
   size(600, 600);
-
 }
 
 void draw() {
@@ -56,6 +55,7 @@ background(255);
   ellipse(230, 168, 40, 40);
   
 fill (0,0,0);
+//Text y settings
 textSize (10);
 text ("alumno: Contreras Franco", 70,40);
 text ("Legajo: 73467/3", 70,50);
@@ -67,6 +67,7 @@ text ("B", 150,320);
   
   strokeWeight(3);
   noFill();
+//Piramide
 line (300,200,200,325);
 line (300,200,400,325);
 line (400,325,200,325);
