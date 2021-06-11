@@ -2,7 +2,7 @@
 //legajo: 73467/3
 
 int pantalla,r,g,b; // variables enteras
-float posX=0,posX2=800,incremento = 2,incremento2 = 2, incremento3=2,Y=-300,Y2=700,Y3=750,contador,contador2,contador3; //variables flotantes
+float posX=0,posX2=800,incremento = 2,incremento2 = 2, incremento3=2,Y=-150,Y2=700,Y3=750,contador,contador2,contador3,transparencia,contador4; //variables flotantes
 PImage foto0,foto1,foto2,foto3,foto4,foto5,foto6,foto7,foto8,foto10,foto11,foto12; //asignacion de pimage
 PFont font1; //asignacion de pfont
 
@@ -36,7 +36,8 @@ void setup () {
   //variables contadores
   contador= 400;
   contador2= 400;
-  contador3=-0.70; 
+  contador3=-0.70;
+
 }
 
 void draw () {
@@ -49,11 +50,16 @@ void draw () {
   //PANTALLA 0    
   if ( pantalla == 0) {
     background(139,26,26);
+    pushStyle();
+     contador4=2;
+     transparencia = transparencia+contador4;
+    tint (map(transparencia,255,0,255, 0) );
     image (foto11,0,0,width,height);
-    image (foto3,0,Y,800,300);
+    popStyle();
+    image (foto3,0,Y,800,150);
     Y++;
-    if (Y>=3) {
-    Y=3;
+    if (Y>=0) {
+    Y=0;
     }
 pushMatrix();
     stroke(246,255,3);
@@ -341,7 +347,9 @@ void mousePressed() {
   else if (pantalla == 9) {
        if ( dist(mouseX, mouseY, 700, 550) < 40 ) {
       pantalla=0;
-      Y=-300;}  
+      Y=-150;
+      contador4=0.10;
+      transparencia=0;}  
        
  }
 
@@ -352,6 +360,7 @@ void mousePressed() {
     posX2=800;
     incremento= 2;
     incremento2= 2;
+    contador4=0.50;
       }
     else if ( pantalla == 1  ) {
     posX=0;
